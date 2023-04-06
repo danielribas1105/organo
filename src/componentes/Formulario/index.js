@@ -4,7 +4,7 @@ import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
 import './Formulario.css';
 
-const Formulario = () => {
+const Formulario = (props) => {
     const times = [
         'Programação','Front-end','Data Science','DevOps','UX e Design','Mobile','Inovação e Gestão'
     ];
@@ -16,7 +16,9 @@ const Formulario = () => {
 
     const aoClicar = (evento) => {
         evento.preventDefault();
-        console.log("Form submetido => ", nome, cargo, imagem, time);
+        props.aoCadastrarColaborador({
+            nome, cargo, imagem, time
+        });
     }
 
     return (
