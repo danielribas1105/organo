@@ -47,7 +47,6 @@ function App() {
   const [colaboradores, setColaboradores] = useState([]);
 
   const aoColaboradorCadastrado = (colaborador) => {
-    console.log(colaborador);
     setColaboradores([...colaboradores, colaborador]);
   }
 
