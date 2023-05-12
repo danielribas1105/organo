@@ -1,6 +1,5 @@
 .time {
-    width: 100%;
-    padding: 32px;
+    padding: 2rem;
     text-align: center;
 }
 
@@ -8,15 +7,15 @@
     font-family: 'Prata';
     font-style: normal;
     font-weight: 400;
-    font-size: 32px;
-    border-bottom: 4px solid;
+    font-size: 2rem;
+    border-bottom: 0.25rem solid;
     display: inline-block;
-    padding-bottom: 10px;
+    padding-bottom: 0.5rem;
 }
 
 .time .colaboradores {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 32px;
+    margin-top: 2rem;
 }
