@@ -50,6 +50,10 @@ function App() {
     setColaboradores([...colaboradores, colaborador]);
   }
 
+  function deletarColaborador() {
+    console.log("Deletar colaborador");
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -62,7 +66,8 @@ function App() {
           nome={time.nome} 
           corPrimaria={time.corPrimaria} 
           corSecundaria={time.corSecundaria}
-          colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+          colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} 
+          aoDeletar={deletarColaborador}
         />)
       }
       <Rodape/>
