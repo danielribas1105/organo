@@ -9,18 +9,18 @@ import CampoNovaCor from '../CampoNovaCor';
 const Formulario = (props) => {
     
     const id = uuidv4();
+    const favorito = false;
     const[nome, setNome] = useState('');
     const[cargo, setCargo] = useState('');
     const[imagem, setImagem] = useState('');
     const[time, setTime] = useState('');
     const[novoTime, setNovoTime] = useState('');
     const[novaCor, setNovaCor] = useState('');
-    const[corNovoTime, setCorNovoTime] = useState('');
 
-    const aoClicar = (evento) => {
+    const aoCriarCard = (evento) => {
         evento.preventDefault();
         props.aoCadastrarColaborador({
-            id, nome, cargo, imagem, time
+            id, nome, cargo, imagem, time, favorito
         });
         setNome("");
         setCargo("");
@@ -28,9 +28,15 @@ const Formulario = (props) => {
         setTime("");
     }
 
+    const aoCriarTime = (evento) => {
+        evento.preventDefault();
+        props.criarTime({nome: novoTime, cor: novaCor});
+        setNovoTime("");
+    }
+
     return (
         <section className="formulario">
-            <form onSubmit={aoClicar}>
+            <form onSubmit={aoCriarCard}>
                 <h2>Preencha os campos para gerar o card do colaborador</h2>
                 <CampoTexto 
                     required={true}
@@ -63,10 +69,7 @@ const Formulario = (props) => {
                     Criar card
                 </Botao>
             </form>
-            <form onSubmit={(evento) => {
-                    evento.preventDefault();
-                    props.criarTime({nome: novoTime, cor: novaCor});
-                }}>
+            <form onSubmit={aoCriarTime}>
                 <h2>Preencha os campos para criar um novo time</h2>
                 <CampoTexto 
                     required //valor true é default
@@ -78,8 +81,8 @@ const Formulario = (props) => {
                 <CampoNovaCor
                     required
                     label="Selecione uma cor para o time"
-                    valor={corNovoTime}
-                    aoAlterar={valor => setCorNovoTime(valor)}
+                    valor={novaCor}
+                    aoAlterar={valor => setNovaCor(valor)}
                 />
                 <Botao>
                     Criar novo time

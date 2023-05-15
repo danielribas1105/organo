@@ -55,6 +55,15 @@ function App() {
     setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id));
   }
 
+  function favoritarCard(id){
+    setColaboradores(colaboradores.map(colaborador => {
+        if(colaborador.id === id){
+          colaborador.favorito = !colaborador.favorito; 
+        }
+        return colaborador;
+    }));
+  }
+
   function mudarCorTime(cor, timeId){
     setTimes(times.map(time => {
       if(time.id === timeId){
@@ -83,6 +92,7 @@ function App() {
           cor={time.cor} 
           colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} 
           aoDeletar={deletarColaborador}
+          aoFavoritar={favoritarCard}
           mudarCor={mudarCorTime}
         />)
       }
