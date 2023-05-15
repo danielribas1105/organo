@@ -1,6 +1,13 @@
 .time {
     padding: 2rem;
     text-align: center;
+    position: relative;
+}
+
+.input-cor {
+    position: absolute;
+    top: 1.5rem;
+    right: 3rem;
 }
 
 .time h3 {
@@ -13,7 +20,7 @@
     padding-bottom: 0.5rem;
 }
 
-.time .colaboradores {
+.colaboradores {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
