@@ -3,18 +3,21 @@ import Botao from '../Botao';
 import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
 import './Formulario.css';
+import { v4 as uuidv4 } from 'uuid';
 
 const Formulario = (props) => {
     
+    const id = uuidv4();
     const[nome, setNome] = useState('');
     const[cargo, setCargo] = useState('');
     const[imagem, setImagem] = useState('');
     const[time, setTime] = useState('');
 
     const aoClicar = (evento) => {
+        
         evento.preventDefault();
         props.aoCadastrarColaborador({
-            nome, cargo, imagem, time
+            id, nome, cargo, imagem, time
         });
         setNome("");
         setCargo("");

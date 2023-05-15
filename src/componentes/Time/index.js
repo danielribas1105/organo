@@ -10,12 +10,13 @@ const Time = (props) => {
                     backgroundColor: hexToRgba(props.cor, 0.4)}}>
             <input type="color" className="input-cor" 
                 value={props.cor} 
-                onChange={evento => props.mudarCor(evento.target.value, props.nome)}/>
+                onChange={evento => props.mudarCor(evento.target.value, props.id)}/>
             <h3 style={{borderColor: props.cor}}>{props.nome}</h3>
             <div className="colaboradores">
                 {props.colaboradores.map(colaborador => {
                     return <Colaborador 
                         key={colaborador.nome}
+                        id={colaborador.id}
                         nome={colaborador.nome}
                         cargo={colaborador.cargo}
                         imagem={colaborador.imagem}
