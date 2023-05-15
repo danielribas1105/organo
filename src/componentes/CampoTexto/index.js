@@ -8,7 +8,6 @@ const CampoTexto = (props) => {
 
     const aoDigitar = (evento) => {
         props.aoAlterar(evento.target.value);
-
     }
 
     return (

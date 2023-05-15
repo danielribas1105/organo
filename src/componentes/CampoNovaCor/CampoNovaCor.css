@@ -1,0 +1,19 @@
+.campo-cor {
+    margin: 1.5rem 0;
+    height: 6.5rem;
+}
+
+.campo-cor label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: block;
+    align-items: center;
+    color: #212121;
+}
+
+.campo-cor input {
+    width: 6rem;
+    height: 2rem;
+}

@@ -1,14 +1,13 @@
 .botao {
     margin-top: 1.5rem;
-    width: 10rem;
     height: 4rem;
     background: #6278F7;
     color: white;
     border-style: none;
     border-radius: 0.7rem;
     font-family: 'Montserrat';
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 600;
     align-items: center;
     cursor: pointer;
 }
